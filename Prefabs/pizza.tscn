@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnrh87si5gcdx"]
+
+[ext_resource type="Script" path="res://Scripts/Sliceable.gd" id="1_jq157"]
+[ext_resource type="Texture2D" uid="uid://c8ve3hqrubn4l" path="res://Sprites/pizzasprite.png" id="2_n5uja"]
+
+[node name="Pizza" type="RigidBody2D" groups=["sliceable"]]
+position = Vector2(253, -2)
+mass = 0.1
+gravity_scale = 0.1
+script = ExtResource("1_jq157")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_n5uja")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(1.03791, 1.02659)
+polygon = PackedVector2Array(-37, -83, -12, -90, 13, -89, 42, -79, 59, -66, 75, -51, 84, -29, 91, -6, 87, 22, 76, 49, 55, 72, 33, 84, 4, 91, -25, 88, -50, 76, -71, 58, -87, 30, -92, 3, -88, -26, -76, -50, -57, -70)

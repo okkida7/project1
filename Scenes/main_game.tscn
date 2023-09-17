@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh5isw6bfj4uc"]
+
+[ext_resource type="PackedScene" uid="uid://dnrh87si5gcdx" path="res://Prefabs/pizza.tscn" id="1_kt1k7"]
+[ext_resource type="PackedScene" uid="uid://dx6i6s5xcgkja" path="res://Prefabs/slicer_parent.tscn" id="2_m0d30"]
+
+[node name="MainGame" type="Node2D"]
+
+[node name="Pizza" parent="." instance=ExtResource("1_kt1k7")]
+
+[node name="SlicerParent" parent="." instance=ExtResource("2_m0d30")]
