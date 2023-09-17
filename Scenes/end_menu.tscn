@@ -1,3 +1,5 @@
 [gd_scene format=3 uid="uid://b5l1u7h0vwccq"]
 
-[node name="end_menu" type="Node2D"]
+[node name="end_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
