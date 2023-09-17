@@ -25,10 +25,6 @@ MusicPlayer="*res://Scenes/music_player.tscn"
 window/size/viewport_width=500
 window/size/viewport_height=1000
 
-[editor]
-
-movie_writer/movie_file="C:/Users/timme/Documents/project1/demo.avi"
-
 [input]
 
 Slice={
