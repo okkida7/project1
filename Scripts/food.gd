@@ -41,5 +41,5 @@ func calculate_intersection(from, to):
 
 func split_sprite(intersections):
 	print("Slicing sprite at: ", intersections)
-	# You'd actually add your sprite slicing logic here.
+	# we need a sprite slicing logic here
 	queue_free()  # For this example, we'll just delete the sprite
