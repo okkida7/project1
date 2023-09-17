@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkb7jvojbkhsv"]
+
+[ext_resource type="Script" path="res://Scripts/start_menu.gd" id="1_xv1qs"]
+[ext_resource type="Theme" uid="uid://cwxjqoeou12e7" path="res://Themes/button_theme.tres" id="2_8ulr3"]
+[ext_resource type="FontFile" uid="uid://bu216p32xahxb" path="res://Fonts/IndieFlower-Regular.ttf" id="2_k567k"]
+[ext_resource type="Texture2D" uid="uid://bpd554rlsjdxf" path="res://Images/StartBG.jpeg" id="3_2jg8b"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xv1qs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_8ulr3")
+theme_override_fonts/font = ExtResource("2_k567k")
+theme_override_font_sizes/font_size = 50
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_8ulr3")
+theme_override_fonts/font = ExtResource("2_k567k")
+theme_override_font_sizes/font_size = 50
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_8ulr3")
+theme_override_fonts/font = ExtResource("2_k567k")
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="StartBg" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(880, 421)
+scale = Vector2(0.955046, 1.11209)
+texture = ExtResource("3_2jg8b")
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

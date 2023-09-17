@@ -11,5 +11,10 @@ config_version=5
 [application]
 
 config/name="Project 1"
+run/main_scene="res://Scenes/start_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+MusicPlayer="*res://Scenes/music_player.tscn"
