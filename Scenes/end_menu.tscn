@@ -1,5 +1,24 @@
-[gd_scene format=3 uid="uid://b5l1u7h0vwccq"]
+[gd_scene load_steps=3 format=3 uid="uid://b5l1u7h0vwccq"]
+
+[ext_resource type="FontFile" uid="uid://bu216p32xahxb" path="res://Fonts/IndieFlower-Regular.ttf" id="1_jasxs"]
+[ext_resource type="Texture2D" uid="uid://cw3b5n77i5bc" path="res://Images/pizza.jpeg" id="2_3l36w"]
 
 [node name="end_menu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+offset_left = 149.0
+offset_top = 153.0
+offset_right = 396.0
+offset_bottom = 230.0
+theme_override_fonts/font = ExtResource("1_jasxs")
+theme_override_font_sizes/font_size = 50
+text = "Good Game!"
+
+[node name="Pizza" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(261, 481)
+scale = Vector2(0.8025, 0.738397)
+texture = ExtResource("2_3l36w")
