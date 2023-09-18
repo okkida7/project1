@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://8ywxjsyk51o4"]
+
+[ext_resource type="Script" path="res://Scripts/Sliceable.gd" id="1_gkwjw"]
+[ext_resource type="Texture2D" uid="uid://tbmoagyq0vdm" path="res://Sprites/hotdog.png" id="2_eyf0v"]
+
+[node name="hotdog" type="RigidBody2D" groups=["sliceable"]]
+position = Vector2(253, -2)
+mass = 0.1
+gravity_scale = 0.1
+script = ExtResource("1_gkwjw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_eyf0v")
+region_enabled = true
+region_rect = Rect2(0, 0, 200, 200)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(1.03791, 1.02659)
+polygon = PackedVector2Array(-40.4659, -95.4617, 38.539, -95.4617, 37.5755, 96.4358, -41.4294, 95.4617)

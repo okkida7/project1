@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://c3jiwgc3ajt4p"]
-
-[node name="debugpoint" type="ColorRect"]
-offset_left = 31.0
-offset_top = 74.0
-offset_right = 41.0
-offset_bottom = 84.0
-pivot_offset = Vector2(5, 5)
-color = Color(0, 1, 0, 1)
