@@ -51,8 +51,8 @@ text = "Quit"
 
 [node name="StartBg" type="Sprite2D" parent="."]
 z_index = -5
-position = Vector2(880, 421)
-scale = Vector2(0.955046, 1.11209)
+position = Vector2(365, 623)
+scale = Vector2(0.631771, 1.21309)
 texture = ExtResource("3_2jg8b")
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
