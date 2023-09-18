@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dx6i6s5xcgkja"]
 
-[ext_resource type="Script" path="res://Scripts/Slicer (2).gd" id="1_lx5rf"]
+[ext_resource type="Script" path="res://Scripts/Slicer.gd" id="1_lx5rf"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_cwjd7"]
 a = Vector2(-20, 0)

@@ -1,14 +1,9 @@
 extends RigidBody2D
 
-var velocity = Vector2(0, 100)
-var speed_multiplier = 1.5
-
 func _ready():
 	get_parent().connect("slice_made", Callable(self, "_on_slice_made"))
-	velocity.y *= speed_multiplier
-
-func _physics_process(delta):
-	position += velocity * delta
+	gravity_scale *= Global.gravity_multiplier
+	mass *= Global.mass_multiplier
 
 func slice(slicing_polygon):
 	var original_polygon = $CollisionPolygon2D.polygon
@@ -19,6 +14,8 @@ func slice(slicing_polygon):
 		#create_halves_from_points(half1_points, half2_points, slicing_polygon)
 		queue_free()
 		go_to_new_scene()
+		Global.increase_gravity_multiplier(1.5)
+		Global.increase_mass_multiplier(1.5)
 	else:
 		print("Slicing failed or was not clean.")
 
