@@ -2,29 +2,37 @@ extends Line2D
 
 @onready var slicer_start = get_point_position(0)
 @onready var slicer_end = get_point_position(1)
+
+@onready var rectangle_points = create_rectangle_from_line(slicer_start, slicer_end, 2.0)
 var intersecting_body: Node = null
 
 var slice_possible = false
 
+
 func _process(delta):
-	if Input.is_action_just_pressed("Slice") and slice_possible:
-		print("slice triggered")
-		# intersecting_body.freeze = true
-		
-		intersecting_body.slice(self.global_transform * slicer_start, self.global_transform * slicer_end)
+	if Input.is_action_just_pressed("Slice"):
+		# Check for any sliceable object intersections with the slicer line
+		check_for_intersections()
+
+func check_for_intersections():
+	var sliceables = get_tree().get_nodes_in_group("sliceable")
+	for sliceable in sliceables:
+		var sliceable_polygon = sliceable.global_transform * sliceable.get_node("CollisionPolygon2D").polygon
+
+		if Geometry2D.intersect_polygons(sliceable_polygon, rectangle_points):
+			sliceable.slice(rectangle_points)
 
 
+func create_rectangle_from_line(slicer_start: Vector2, slicer_end: Vector2, thickness: float) -> Array:
+	var direction = slicer_end - slicer_start
+	var normal = Vector2(-direction.y, direction.x).normalized()
 
-func _on_area_2d_body_entered(body):
-	if body.is_in_group("sliceable"):
-		slice_possible = true
-		intersecting_body = body
-		print("entered: ", intersecting_body)
+	var half_thickness = thickness / 2.0
 
+	# Compute the four vertices of the rectangle
+	var p1 = self.global_transform * (slicer_start + normal * half_thickness)
+	var p2 = self.global_transform * (slicer_start - normal * half_thickness)
+	var p3 = self.global_transform * (slicer_end - normal * half_thickness)
+	var p4 = self.global_transform * (slicer_end + normal * half_thickness)
 
-func _on_area_2d_body_exited(body):
-	if body.is_in_group("sliceable"):
-		slice_possible = false
-		print("exited: ", intersecting_body)
-		intersecting_body = null
-
+	return [p1, p2, p3, p4]
