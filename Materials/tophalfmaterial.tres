@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://br20q6rkk85pu"]
+
+[ext_resource type="Shader" path="res://Shaders/cropshader.gdshader" id="1_qfqox"]
+
+[resource]
+shader = ExtResource("1_qfqox")
+shader_parameter/slice_start = null
+shader_parameter/slice_end = null
